@@ -17,8 +17,8 @@ import static com.vnpt.salary.SalaryUIApplication.StageReadyEvent;
 public class StageInitializer implements ApplicationListener<StageReadyEvent> {
     @Value("Bang cham cong")
     private String appTitle;
-    @Value("classpath:/fxml/login.fxml")
-    private Resource loginPage;
+    @Value("classpath:/app.fxml")
+    private Resource appContent;
     private final ApplicationContext applicationContext;
 
     public StageInitializer(ApplicationContext applicationContext) {
@@ -30,8 +30,7 @@ public class StageInitializer implements ApplicationListener<StageReadyEvent> {
         try{
             Stage stage = event.getStage();
             stage.setTitle(appTitle);
-            stage.initStyle(StageStyle.UNDECORATED);
-            FXMLLoader loader = new FXMLLoader(loginPage.getURL());
+            FXMLLoader loader = new FXMLLoader(appContent.getURL());
             loader.setControllerFactory(applicationContext::getBean);
             Parent parent = loader.load();
             assert parent != null;
