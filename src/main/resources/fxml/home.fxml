@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="683.0" prefWidth="1030.0" style="-fx-background-color: #fff;"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.vnpt.salary.controller.HomeController"
+>
+   <children>
+      <AnchorPane prefHeight="524.0" prefWidth="240.0" style="-fx-background-color: #3f2b63;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="186.0" prefWidth="222.0" spacing="10.0">
+               <children>
+                  <Circle fx:id="avatar" fill="DODGERBLUE" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label fx:id="name" text="Lê Hoàng Dững" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox fx:id="vb_list" layoutY="226.0" prefHeight="302.0" prefWidth="238.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
+               <children>
+                  <Button fx:id="dashBoardBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="280.0" styleClass="standard-button" stylesheets="@../style/pinkStyle.css" text="Dashboard" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/home_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="salaryTableBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="280.0" styleClass="standard-button" stylesheets="@../style/pinkStyle.css" text="Bảng chấm công" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/calendar_50px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="staffBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="280.0" styleClass="standard-button" stylesheets="@../style/pinkStyle.css" text="Nhân viên" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/account_50px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="messageBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="280.0" styleClass="standard-button" stylesheets="@../style/pinkStyle.css" text="Messenger" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/chat_bubble_50px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="profileBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="280.0" styleClass="standard-button" stylesheets="@../style/pinkStyle.css" text="Hồ sơ" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/profile_50px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="signOutBnt" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="280.0" styleClass="standard-button" stylesheets="@../style/pinkStyle.css" text="Đăng xuất" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/exit_50px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets left="5.0" />
+         </opaqueInsets>
+      </AnchorPane>
+      <StackPane fx:id="pane_context" layoutX="239.0" layoutY="30.0" prefHeight="528.0" prefWidth="752.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+      <HBox layoutX="1004.0" layoutY="2.0" stylesheets="@../style/pinkStyle.css" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="20.0" fitWidth="20.0" onMouseClicked="#hide" pickOnBounds="true" preserveRatio="true" styleClass="system-button">
+               <image>
+                  <Image url="@../icon/minimize_window_32px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="20.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true" styleClass="system-button">
+               <image>
+                  <Image url="@../icon/close_window_32px.png" />
+               </image>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

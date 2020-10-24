@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity"
+         maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+         prefHeight="386.0" prefWidth="593.0" style="-fx-background-color: #3f2b63;"
+         xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="com.vnpt.salary.controller.LoginController"
+         >
+   <children>
+      <Label layoutX="33.0" layoutY="37.0" text="Salary Calculater" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="316.0" text="CTY TNHH VT Nga Hùng" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="15.0" />
+      <Label layoutX="116.0" layoutY="117.0" text="Login with user" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="129.0" layoutY="170.0" text="User name" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="139.0" layoutY="213.0" text="Passwork" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="username" layoutX="217.0" layoutY="168.0" onAction="#submit" prefHeight="30.0" prefWidth="229.0" promptText="Tên tài khoản">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <PasswordField fx:id="password" layoutX="217.0" layoutY="212.0" onAction="#submit" prefHeight="30.0" prefWidth="229.0" promptText="Mật khẩu">
+         <font>
+            <Font size="14.0" />
+         </font></PasswordField>
+      <Button layoutX="370.0" layoutY="252.0" mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="76.0" text="Login" textFill="#390f38" />
+      <CheckBox fx:id="saveInfo" layoutX="224.0" layoutY="256.0" mnemonicParsing="false" text="Save information" textFill="WHITE" />
+      <Label fx:id="ver" layoutX="26.0" layoutY="334.0" text="Vesion 2020.4.2" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" />
+      <Label layoutX="487.0" layoutY="316.0" text="f/dungdungc1" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <Label layoutX="574.0" layoutY="-1.0" onMouseClicked="#exit" styleClass="system-button" stylesheets="@../style/pinkStyle.css" text="x" textFill="#d7d7d7" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="-1.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="proPane" layoutX="81.0" layoutY="89.0">
+         <children>
+            <ProgressBar fx:id="progressBar" prefHeight="18.0" prefWidth="467.0" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,90 @@
+.main-button{
+	-fx-background-color: #3f2b63;
+}
+.main-button:hover{
+	-fx-background-color: #2a1c42;
+	-fx-background-radius: 40 0 0 40;
+}
+
+.main-button:pressed{
+	-fx-background-color: #3C295E;
+	-fx-background-radius: 20 0 0 20;
+	-fx-scale-y: 0.95;
+	-fx-scale-x: 0.95;
+}
+
+.standard-button{
+	-fx-text-fill: #fff;
+	-fx-background-color: #3f2b63;
+	-fx-background-radius: 5;
+}
+.standard-button:hover{
+	-fx-background-color: #2a1c42;
+}
+
+.standard-button:pressed{
+	-fx-background-color: #3C295E;
+	-fx-scale-y: 0.95;
+	-fx-scale-x: 0.95;
+}
+.popup-button{
+	-fx-background-color: #fff;
+	-fx-text-fill: black;
+	-fx-background-radius: 0;
+}
+.popup-button:hover{
+	-fx-background-color: #3f2b63;;
+	-fx-text-fill: white;
+}
+.edit-button{
+	-fx-background-color: #fff;
+	-fx-text-fill: black;
+	-fx-background-radius: 20;
+	-fx-border-radius: 20;
+	-fx-border-color: #0839BC;
+}
+.edit-button:hover{
+	-fx-background-color: #3f2b63;;
+	-fx-text-fill: white;
+}
+
+.system-button{
+	-fx-opacity: .4;
+}
+.system-button:hover{
+	-fx-opacity: 1;
+	-fx-scale-y: 1.2;
+	-fx-scale-x: 1.2;
+}
+
+.lb-close{
+	-fx-text-fill: #aaa;
+}
+.lb-close:hover{
+	-fx-text-fill: #fff;
+}
+
+.scale-bar{
+	-fx-background-color: #fff;
+}
+.scale-bar:hover{
+	-fx-background-color: #CDCDCD;
+	-fx-scale-y: 0.99;
+	-fx-scale-x: 0.99;
+}
+
+.scale-bar:pressed{
+	-fx-background-color: #EFEFEF;
+	-fx-scale-y: 0.97;
+	-fx-scale-x: 0.97;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+
+.time-picker{
+	-fx-end-margin: 5;
+	-fx-end-margin: 5;
+}
