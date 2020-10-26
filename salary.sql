@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
 --
--- Host: 192.168.1.254    Database: salary
+-- Host: 127.0.0.1    Database: salary
 -- ------------------------------------------------------
--- Server version	8.0.20
+-- Server version	8.0.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -40,6 +40,31 @@ CREATE TABLE `bonus` (
 LOCK TABLES `bonus` WRITE;
 /*!40000 ALTER TABLE `bonus` DISABLE KEYS */;
 /*!40000 ALTER TABLE `bonus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `day_record`
+--
+
+DROP TABLE IF EXISTS `day_record`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `day_record` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `date` date DEFAULT NULL,
+  `status_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `day_record`
+--
+
+LOCK TABLES `day_record` WRITE;
+/*!40000 ALTER TABLE `day_record` DISABLE KEYS */;
+/*!40000 ALTER TABLE `day_record` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -96,6 +121,30 @@ LOCK TABLES `records` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `role`
+--
+
+DROP TABLE IF EXISTS `role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `role` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `role`
+--
+
+LOCK TABLES `role` WRITE;
+/*!40000 ALTER TABLE `role` DISABLE KEYS */;
+/*!40000 ALTER TABLE `role` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `roles`
 --
 
@@ -116,7 +165,7 @@ CREATE TABLE `roles` (
 
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-INSERT INTO `roles` VALUES (1,'Quản trị hệ thống ','ADMIN');
+INSERT INTO `roles` VALUES (1,'Quản trị hệ thống ','ROLE_ADMIN'),(2,'Trưởng nhóm','ROLE_LEADER'),(3,'Nhân viên','ROLE_USER');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,6 +223,31 @@ LOCK TABLES `status` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `time_line`
+--
+
+DROP TABLE IF EXISTS `time_line`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `time_line` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `day_id` int NOT NULL,
+  `end` time DEFAULT NULL,
+  `start` time DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `time_line`
+--
+
+LOCK TABLES `time_line` WRITE;
+/*!40000 ALTER TABLE `time_line` DISABLE KEYS */;
+/*!40000 ALTER TABLE `time_line` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `time_lines`
 --
 
@@ -210,16 +284,21 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `address` varchar(255) DEFAULT NULL,
-  `avatar` varchar(255) DEFAULT NULL,
   `birthday` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `full_name` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL,
-  `sex` varchar(255) DEFAULT NULL,
+  `role_id` int NOT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  `current_salary` double NOT NULL,
+  `deleted` bit(1) NOT NULL DEFAULT b'0',
+  PRIMARY KEY (`id`),
+  KEY `FKp56c1712k691lhsyewcssf40f` (`role_id`),
+  CONSTRAINT `FKp56c1712k691lhsyewcssf40f` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -228,7 +307,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Long An','1.jpg','1996/06/19','dungdg199s@gmail.com','Lê Hoàng Dững','0888798236','Nam','123','dung');
+INSERT INTO `users` VALUES (6,'Tan Hoa','19/06/1996','dungdg199s@gmail.com','Lê Hoàng Dững','0888798236',1,NULL,'123',NULL,'dung',0,_binary '\0');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -241,4 +320,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-24 16:03:32
+-- Dump completed on 2020-10-26 22:15:38
