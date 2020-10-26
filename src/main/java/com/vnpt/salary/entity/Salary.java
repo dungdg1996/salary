@@ -20,8 +20,10 @@ public class Salary {
     private double allDayWork;
     private double wage;
     private double expSalary;
+    @Column(name = "user_id")
+    private int userId;
 
     @OneToMany
-    @JoinColumn(name = "salary_id")
+    @JoinColumn(name = "salary_id", referencedColumnName = "id")
     private List<Bonus>  bonus;
 }

@@ -12,9 +12,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "roles")
 public class Role {
-    public final static String ADMIN = "ADMIN";
-    public final static String MEMBER = "MEMBER";
-    public final static String LOWER = "LOWER";
+    public final static Role ADMIN = new Role(1, "ROLE_ADMIN", "Quản trị hệ thống");
+    public final static Role LEADER = new Role(2, "ROLE_LEADER", "Trưởng nhóm");
+    public final static Role USER = new Role(3, "ROLE_USER", "Nhân viên");
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -23,9 +23,11 @@ public class Record {
     private LocalDate date;
     private double workTimes;
     private double eatTimes;
+    @Column(name = "user_id")
+    private int userId;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "record_id")
+    @JoinColumn(name = "record_id", referencedColumnName = "id")
     private List<TimeLine> timeLines;
 
     @ManyToOne

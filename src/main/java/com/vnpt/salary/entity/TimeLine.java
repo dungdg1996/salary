@@ -21,6 +21,8 @@ public class TimeLine {
     private Integer id;
     private LocalTime start;
     private LocalTime end;
+    @Column(name = "record_id")
+    private int recordId;
 
     public TimeLine(LocalTime start, LocalTime end) {
         this.start = start;

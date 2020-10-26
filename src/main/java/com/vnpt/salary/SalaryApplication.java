@@ -12,14 +12,7 @@ import org.springframework.context.annotation.Bean;
 public class SalaryApplication {
 
     public static void main(String[] args) {
-        Application.launch(SalaryUIApplication.class, args);
-    }
-
-    @Bean
-    CommandLineRunner commandLineRunner(RoleRepo roleRepo){
-        return args -> {
-            roleRepo.save(new Role(1, "ADMIN", "Quản trị hệ thống "));
-        };
+        SpringApplication.run(SalaryApplication.class, args);
     }
 
 }

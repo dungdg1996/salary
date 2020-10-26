@@ -1,7 +1,7 @@
 <nav class="pcoded-navbar" xmlns:th="https://www.thymeleaf.org" th:fragment="sidebar">
     <div class="pcoded-inner-navbar main-menu">
         <ul class="pcoded-item pcoded-left-item">
-            <li class="">
+<!--            <li class="">-->
 <!--                <a href="javascript:void(0)">-->
 <!--                    <span class="pcoded-micon"><i class="feather icon-home"></i></span>-->
 <!--                    <span class="pcoded-mtext">Dashboard</span>-->
@@ -25,16 +25,16 @@
 <!--                    <span class="pcoded-mtext">Video</span>-->
 <!--                </a>-->
 <!--            </li>-->
-<!--            <li class="">-->
-<!--                <a th:href="@{/admin/target}">-->
-<!--                    <span class="pcoded-micon"><i class="feather icon-layers"></i></span>-->
-<!--                    <span class="pcoded-mtext">Mục tiêu</span>-->
-<!--                </a>-->
-<!--            </li>-->
             <li class="">
                 <a th:href="@{/users}">
                     <span class="pcoded-micon"><i class="feather icon-user"></i></span>
                     <span class="pcoded-mtext">Tài khoản</span>
+                </a>
+            </li>
+            <li class="">
+                <a th:href="@{/users/deleted}">
+                    <span class="pcoded-micon"><i class="feather icon-trash"></i></span>
+                    <span class="pcoded-mtext">Thùng rác</span>
                 </a>
             </li>
         </ul>

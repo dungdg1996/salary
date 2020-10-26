@@ -1,6 +1,5 @@
 package com.vnpt.salary.entity;
 
-import com.sun.xml.bind.v2.model.core.ID;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,12 +28,23 @@ public class User {
     private String address;
     private String phone;
     private String avatar;
+    private double currentSalary;
+    private boolean deleted;
+    @Column(name = "role_id")
+    private int roleId;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @ManyToOne
+    @JoinColumn(name = "role_id", updatable = false, insertable = false)
+    private Role role;
+
+    @OneToMany
+    @JoinColumn(
+            name = "user_id", referencedColumnName = "id",
+            updatable = false, insertable = false)
     private List<Record> records;
 
     @OneToMany
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id",
+            updatable = false, insertable = false)
     private List<Salary> salaries;
 }

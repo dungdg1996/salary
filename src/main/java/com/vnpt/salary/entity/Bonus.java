@@ -15,4 +15,6 @@ public class Bonus {
     private Integer id;
     private String name;
     private double value;
+    @Column(name = "salary_id")
+    private int salaryId;
 }
