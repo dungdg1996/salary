@@ -29,6 +29,7 @@ public class User {
     private String phone;
     private String avatar;
     private double currentSalary;
+    private double wage;
     private boolean deleted;
     @Column(name = "role_id")
     private int roleId;

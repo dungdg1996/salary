@@ -27,7 +27,7 @@ public class UserController {
 
     @GetMapping("deleted")
     public String deletedUser(Model model){
-        model.addAttribute("users", userService.deleteUsers());
+        model.addAttribute("users", userService.deletedUser());
         return "user/user-deleted";
     }
 
@@ -56,5 +56,18 @@ public class UserController {
     public String restore(@RequestParam int id){
         userService.restore(id);
         return "redirect:/users/deleted";
+    }
+
+    @GetMapping("edit")
+    public String edit(Model model, @RequestParam int id){
+        model.addAttribute("user", userService.findById(id));
+        model.addAttribute("roles", roleService.findAll());
+        return "user/user-edit";
+    }
+
+    @PostMapping("update")
+    public String update(User user){
+        userService.update(user);
+        return "redirect:/users";
     }
 }

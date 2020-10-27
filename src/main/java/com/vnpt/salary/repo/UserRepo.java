@@ -12,7 +12,7 @@ public interface UserRepo extends JpaRepository<User, Integer> {
     @Query("select u from User u where u.deleted = false")
     List<User> findAll();
     @Query("select u from User u where u.deleted = true")
-    List<User> deleteUsers();
+    List<User> deletedUsers();
 
     Optional<User> findByUsername(String username);
 

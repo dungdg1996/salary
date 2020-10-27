@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default">
+<head>
+    <title>Trang chủ</title>
+</head>
+<body>
+<div class="main-body" layout:fragment="content">
+    <div class="main-body">
+        <div class="page-body">
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <div class="page-header-breadcrumb">
+                        <ul class="breadcrumb-title">
+                            <li class="breadcrumb-item">
+                                <a href="/admin">
+                                    <i class="feather icon-home"></i> Trang chủ
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#!">Thêm mới mục tiêu</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="#">
+                        </div>
+                        <div class="col-8 text-left">
+                            Lê Hoàng Dững
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <h3 class="font-weight-bold text-primary">12321321331</h3>
+                                    <h5 class="text-black-50">Tổng giờ công</h5>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <h3 class="font-weight-bold text-success">321312</h3>
+                                    <h5 class="text-black-50">Tổng giờ công</h5>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <h3 class="font-weight-bold text-danger">12321321331</h3>
+                                    <div class="text-black-50">Tổng giờ công</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script layout:fragment="inner-script">
+</script>
+</body>
+</html>

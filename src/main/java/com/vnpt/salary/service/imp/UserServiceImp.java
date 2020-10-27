@@ -37,8 +37,8 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public List<User> deleteUsers() {
-        return userRepo.deleteUsers();
+    public List<User> deletedUser() {
+        return userRepo.deletedUsers();
     }
 
     @Override
@@ -47,6 +47,19 @@ public class UserServiceImp implements UserService {
         if (userById.isPresent()){
             User user = userById.get();
             user.setDeleted(false);
+            userRepo.save(user);
+        }
+    }
+
+    @Override
+    public User findById(int id) {
+        return userRepo.findById(id).orElse(new User());
+    }
+
+    @Override
+    public void update(User user) {
+        Optional<User> byId = userRepo.findById(user.getId());
+        if (byId.isPresent()){
             userRepo.save(user);
         }
     }

@@ -24,7 +24,7 @@
                 <div class="card px-3">
                     <div class="card-header px-0 pb-2">
                         <h2 class="text-uppercase text-center">Danh sách khóa học</h2>
-                        <a th:href="@{/admin/course/add}" class="btn btn-sm btn-primary">Thêm
+                        <a th:href="@{/course/add}" class="btn btn-sm btn-primary">Thêm
                             mới</a>
                     </div>
                     <div class="card-block table-border-style">
@@ -50,8 +50,8 @@
                                     <td th:text="${item.lecturesCount}">20</td>
                                     <td th:text="${#numbers.formatDecimal(item.price, 0, 'COMMA', 0, 'POINT')}" class="text-danger font-weight-bold">1.200.000 đ</td>
                                     <td>
-                                        <a th:href="@{/admin/course/edit(id=${item.id})}" class="btn btn-sm btn-info btn-round py-1 font-weight-bold">Sửa</a>
-                                        <a th:href="@{/admin/course/delete(id=${item.id})}" class="btn btn-sm btn-danger btn-round py-1 font-weight-bold">Xóa</a>
+                                        <a th:href="@{/course/edit(id=${item.id})}" class="btn btn-sm btn-info btn-round py-1 font-weight-bold">Sửa</a>
+                                        <a th:href="@{/course/delete(id=${item.id})}" class="btn btn-sm btn-danger btn-round py-1 font-weight-bold">Xóa</a>
                                     </td>
                                 </tr>
                                 </tbody>

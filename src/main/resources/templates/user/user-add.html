@@ -15,7 +15,7 @@
                         <li class="breadcrumb-item"><a href="/admin"> <i
                                 class="feather icon-home"></i> Trang chủ
                         </a></li>
-                        <li class="breadcrumb-item"><a th:href="@{/admin/user/add}">Thêm mới tài khoản</a></li>
+                        <li class="breadcrumb-item"><a th:href="@{/user/add}">Thêm mới tài khoản</a></li>
                     </ul>
                 </div>
             </div>
@@ -61,6 +61,11 @@
                                                     th:text="${item.description}">
                                             </option>
                                         </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Mức lương theo ngày</label>
+                                        <input type="text" th:field="*{wage}" class="form-control"/>
+                                        <span class="text-danger" th:if="${#fields.hasErrors('wage')}" th:errors="*{wage}"></span>
                                     </div>
                                 </div>
                                 <div class="col-12 mt-3">
